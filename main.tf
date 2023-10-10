@@ -6,7 +6,7 @@ region = "us-east-1"
 resource "aws_instance" "one" {
   ami             = "ami-0bb4c991fa89d4b9b"
   instance_type   = "t2.micro"
-  key_name        = "rahamnewterrakp"
+  key_name        = "krishna"
   vpc_security_group_ids = [aws_security_group.five.id]
   availability_zone = "us-east-1a"
   user_data       = <<EOF
@@ -15,7 +15,7 @@ sudo -i
 yum install httpd -y
 systemctl start httpd
 chkconfig httpd on
-echo "hai all this is my app created by terraform infrastructurte by raham sir server-1" > /var/www/html/index.html
+echo "hii gd mrng every one this is lucky devops student in  server-1" > /var/www/html/index.html
 EOF
   tags = {
     Name = "web-server-1"
@@ -25,7 +25,7 @@ EOF
 resource "aws_instance" "two" {
   ami             = "ami-0bb4c991fa89d4b9b"
   instance_type   = "t2.micro"
-  key_name        = "rahamnewterrakp"
+  key_name        = "krishna"
   vpc_security_group_ids = [aws_security_group.five.id]
   availability_zone = "us-east-1b"
   user_data       = <<EOF
@@ -34,7 +34,7 @@ sudo -i
 yum install httpd -y
 systemctl start httpd
 chkconfig httpd on
-echo "hai all this is my website created by terraform infrastructurte by raham sir server-2" > /var/www/html/index.html
+echo "hai all this is lucky infrastructure in server-2" > /var/www/html/index.html
 EOF
   tags = {
     Name = "web-server-2"
@@ -44,7 +44,7 @@ EOF
 resource "aws_instance" "three" {
   ami             = "ami-0bb4c991fa89d4b9b"
   instance_type   = "t2.micro"
-  key_name        = "rahamnewterrakp"
+  key_name        = "krishna"
   vpc_security_group_ids = [aws_security_group.five.id]
   availability_zone = "us-east-1a"
   tags = {
@@ -55,7 +55,7 @@ resource "aws_instance" "three" {
 resource "aws_instance" "four" {
   ami             = "ami-0bb4c991fa89d4b9b"
   instance_type   = "t2.micro"
-  key_name        = "rahamnewterrakp"
+  key_name        = "krishna"
   vpc_security_group_ids = [aws_security_group.five.id]
   availability_zone = "us-east-1b"
   tags = {
@@ -88,7 +88,7 @@ resource "aws_security_group" "five" {
 }
 
 resource "aws_s3_bucket" "six" {
-  bucket = "devopsbyrahamterraserverbucketoo99"
+  bucket = "shivabucket2210"
 }
 
 resource "aws_iam_user" "seven" {
@@ -99,12 +99,12 @@ name = each.value
 variable "user_names" {
 description = "*"
 type = set(string)
-default = ["user1", "user2", "user3", "user4"]
+default = ["user1", "user2"]
 }
 
 resource "aws_ebs_volume" "eight" {
  availability_zone = "us-east-1a"
-  size = 40
+  size = 20
   tags = {
     Name = "ebs-001"
   }
