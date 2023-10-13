@@ -1,14 +1,14 @@
 #this file consists of code for instances and sg
 provider "aws" {
-region = "us-east-1"
+region = "ap-south-1"
 }
 
 resource "aws_instance" "one" {
-  ami             = "ami-0bb4c991fa89d4b9b"
+  ami             = "ami-03d294e37a4820c21"
   instance_type   = "t2.micro"
-  key_name        = "vinay"
+  key_name        = "vinodkey"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "us-east-1a"
+  availability_zone = "ap-south-1a"
   user_data       = <<EOF
 #!/bin/bash
 sudo -i
@@ -23,11 +23,11 @@ EOF
 }
 
 resource "aws_instance" "two" {
-  ami             = "ami-0bb4c991fa89d4b9b"
+  ami             = "ami-03d294e37a4820c21"
   instance_type   = "t2.micro"
-  key_name        = "vinay"
+  key_name        = "vinodkey"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "us-east-1b"
+  availability_zone = "ap-south-1b"
   user_data       = <<EOF
 #!/bin/bash
 sudo -i
@@ -42,22 +42,22 @@ EOF
 }
 
 resource "aws_instance" "three" {
-  ami             = "ami-0bb4c991fa89d4b9b"
+  ami             = "ami-03d294e37a4820c21"
   instance_type   = "t2.micro"
-  key_name        = "vinay"
+  key_name        = "vinodkey"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "us-east-1a"
+  availability_zone = "ap-south-1a"
   tags = {
     Name = "app-server-1"
   }
 }
 
 resource "aws_instance" "four" {
-  ami             = "ami-0bb4c991fa89d4b9b"
+  ami             = "ami-03d294e37a4820c21"
   instance_type   = "t2.micro"
-  key_name        = "vinay"
+  key_name        = "vinodkey"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "us-east-1b"
+  availability_zone = "ap-south-1b"
   tags = {
     Name = "app-server-2"
   }
@@ -88,7 +88,7 @@ resource "aws_security_group" "five" {
 }
 
 resource "aws_s3_bucket" "six" {
-  bucket = "shanadhbucket2210"
+  bucket = "vinadunaidubucket2210"
 }
 
 resource "aws_iam_user" "seven" {
@@ -103,7 +103,7 @@ default = ["user1", "user2"]
 }
 
 resource "aws_ebs_volume" "eight" {
- availability_zone = "us-east-1a"
+ availability_zone = "ap-south-1a"
   size = 20
   tags = {
     Name = "ebs-001"
