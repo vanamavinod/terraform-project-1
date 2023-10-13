@@ -6,7 +6,7 @@ region = "us-east-1"
 resource "aws_instance" "one" {
   ami             = "ami-0bb4c991fa89d4b9b"
   instance_type   = "t2.micro"
-  key_name        = "krishna"
+  key_name        = "vinay"
   vpc_security_group_ids = [aws_security_group.five.id]
   availability_zone = "us-east-1a"
   user_data       = <<EOF
@@ -25,7 +25,7 @@ EOF
 resource "aws_instance" "two" {
   ami             = "ami-0bb4c991fa89d4b9b"
   instance_type   = "t2.micro"
-  key_name        = "krishna"
+  key_name        = "vinay"
   vpc_security_group_ids = [aws_security_group.five.id]
   availability_zone = "us-east-1b"
   user_data       = <<EOF
@@ -44,7 +44,7 @@ EOF
 resource "aws_instance" "three" {
   ami             = "ami-0bb4c991fa89d4b9b"
   instance_type   = "t2.micro"
-  key_name        = "krishna"
+  key_name        = "vinay"
   vpc_security_group_ids = [aws_security_group.five.id]
   availability_zone = "us-east-1a"
   tags = {
@@ -55,7 +55,7 @@ resource "aws_instance" "three" {
 resource "aws_instance" "four" {
   ami             = "ami-0bb4c991fa89d4b9b"
   instance_type   = "t2.micro"
-  key_name        = "krishna"
+  key_name        = "vinay"
   vpc_security_group_ids = [aws_security_group.five.id]
   availability_zone = "us-east-1b"
   tags = {
@@ -88,7 +88,7 @@ resource "aws_security_group" "five" {
 }
 
 resource "aws_s3_bucket" "six" {
-  bucket = "shivabucket2210"
+  bucket = "shanadhbucket2210"
 }
 
 resource "aws_iam_user" "seven" {
